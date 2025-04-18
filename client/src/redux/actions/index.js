@@ -61,6 +61,8 @@ export const deleteTodo = (id) => async (dispatch) => {
   }
 };
 
-export const toggleTab = (tab) => async (dispatch) => {
-  dispatch({ type: TOGGLE_TAB, selected: tab });
-};
+// Fixed: toggleTab doesn't need to be async since it's not doing any async operations
+export const toggleTab = (tab) => ({
+  type: TOGGLE_TAB,
+  selected: tab,
+});
